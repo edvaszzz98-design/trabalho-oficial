@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Edvan</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #222;
+      color: white;
+      padding: 15px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    #lista-projetos {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .projeto {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      width: 250px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #222;
+      color: white;
+      margin-top: 20px;
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      #lista-projetos {
+        flex-direction: column;
+      }
+
+      .projeto {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <nav>
+      <h1 id="nome"></h1>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sobre -->
+  <section id="sobre">
+    <h2>Sobre mim</h2>
+    <p id="sobre-texto"></p>
+  </section>
+
+  <!-- Projetos -->
+  <section id="projetos">
+    <h2>Meus Projetos</h2>
+    <div id="lista-projetos"></div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 - Edvan</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const dados = {
+      nome: "Edvan",
+      descricao: "Meu nome é Edvan, tenho 23 anos e estou fazendo o curso de Desenvolvimento de Sistemas."
+    };
+
+    const projetos = [
+      {
+        nome: "Portfólio Pessoal",
+        descricao: "Meu primeiro site usando HTML, CSS e JavaScript",
+        link: "#"
+      },
+      {
+        nome: "Projeto de Estudos",
+        descricao: "Sistema simples desenvolvido durante o curso",
+        link: "#"
+      }
+    ];
+
+    // Inserir dados
+    document.getElementById("nome").textContent = dados.nome;
+    document.getElementById("sobre-texto").textContent = dados.descricao;
+
+    // Renderizar projetos
+    const container = document.getElementById("lista-projetos");
+
+    projetos.forEach(projeto => {
+      const div = document.createElement("div");
+      div.classList.add("projeto");
+
+      div.innerHTML = `
+        <h3>${projeto.nome}</h3>
+        <p>${projeto.descricao}</p>
+        <a href="${projeto.link}" target="_blank">Ver projeto</a>
+      `;
+
+      container.appendChild(div);
+    });
+  </script>
+
+</body>
+</html><div class="hero">
+  <img src="sua-foto.jpg" alt="Foto de Edvan" class="foto">
+  <h1 id="titulo"></h1>
+  <p>Desenvolvedor em formação</p>
+</div>
